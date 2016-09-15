@@ -38,7 +38,7 @@ namespace DotNetRPG.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(RoleCreateViewModel model)
         {
-            var role = new ApplicationRole();
+            var role = new IdentityRole();
             role.Name = model.Name;
             IdentityResult result = await _roleManager.CreateAsync(role);
             if (result.Succeeded)
